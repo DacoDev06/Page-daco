@@ -11,7 +11,7 @@ function AppRoutes(){
   const Routes = useRoutes(
     [
       {path : '/' , element : <Home/>},
-      {path : '/ciberseguridad',element:<>Me encanta la ciberseguridad</>},
+      {path : '/ciberseguridad',element:<>PROXIMAMENTE PAGINA PARA INFORMACION DE CIBERSEGURIDAD</>},
       {path : '/*',element:<>Sea sapo que eso no existe</>}
 
     ]

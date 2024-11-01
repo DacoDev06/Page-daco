@@ -2,13 +2,12 @@ import { SocialButton } from "../../Components/SocialButton"
 import {images} from './images'
 import {socialMedia} from './socialMedia.js'
 import { FcOpenedFolder } from "react-icons/fc";
-import { FaPython } from "react-icons/fa";
 import { IoMdCode } from "react-icons/io";
 import { IoLinkSharp } from "react-icons/io5";
-
-
-
-
+import { FcAbout } from "react-icons/fc";
+import { FaPaperPlane } from "react-icons/fa";
+import { proyecto1 } from "./proyecto1.js";
+import image from '../../assets/proyecto1img.png'
 
 
 
@@ -66,42 +65,64 @@ function Home() {
               }
         </ul>
       </div>
-      <section className="p-6 w-full self-center flex-col items-start justify-start lg:w-2/3">
-        <div className="flex justify-start items-center gap-2">
-          <h2 className="text-2xl font-bold">Proyectos</h2>
-          <FcOpenedFolder className="text-4xl lg:text-5xl flex justify-center items-center"/>
-        </div>
-          {/* PROYECTOS AQUI  */}
-        <div className="flex flex-col md:flex-row px-4 py-2 gap-5">
-          <div className="bg-black/30 w-full md:w-1/2 h-[230px] border rounded-2xl"></div>
-          <div className="flex flex-col md:w-1/2 h-[230px] justify-around">
-            <h2 className="text-3xl">Modelo Diabetes</h2>
-            <p className="">Descripcion del proyecto en maximo 2 lineas posibles</p>
-            <div className="flex gap-3">
-              {/* TECNOLOGIAS */}
-              <FaPython className="size-[30px]"/>
-              <FaPython className="size-[30px]"/>
-              <FaPython className="size-[30px]"/>
-              <FaPython className="size-[30px]"/>
+      <div className="flex flex-col justify-center">
+        
+        <section className="p-6 w-full self-center flex-col items-start justify-start lg:w-2/3">
+          <div className="flex justify-start items-center gap-2">
+            <h2 className="text-2xl font-bold">Proyectos</h2>
+            <FcOpenedFolder className="text-4xl lg:text-5xl flex justify-center items-center"/>
+          </div>
+            {/* PROYECTOS AQUI  */}
+          <div className="flex flex-col md:flex-row px-4 py-2 gap-5">
+            <div className="bg-black/30 w-full md:w-1/2 h-[230px] border rounded-b-2xl overflow-hidden relative">
+              <img src={image} alt=""  className="w-full h-full object-cover relative left-7 top-2 hover:translate-x-[-8px] hover:translate-y-[-8px] transition-transform rounded-2xl"/>
             </div>
-            <div className="flex gap-4">
-              {/* Bones */}
-              <button className="h-10 flex justify-center items-center gap-2 text-xl px-4 text-blue-800 border-blue-800 border-2 rounded-2xl ">
-                <IoMdCode/>
-                <p>code</p>
-              </button>
-              <button className="flex  justify-center items-center gap-2 text-xl px-4 text-green-600 border-green-600 border-2 rounded-2xl">
-                <IoLinkSharp/>
-                <p>Go</p>
-              </button>
+            <div className="flex flex-col md:w-1/2 h-[230px] justify-around">
+              <h2 className="text-3xl">Proyecto Diabetes</h2>
+              <p className="">Pagina web conectada a un modelo predictivo de Diabetes</p>
+              <div className="flex gap-3">
+                {/* TECNOLOGIAS */}
+                <ul className="flex gap-2">
+                  {proyecto1.map(image =>{
+                  return(
+                    <li key={image}>
+                      <img src={image} alt="" className="size-[30px]"/>
+                    </li>)
+                  })
+                } 
+                </ul>
+              </div>
+              <div className="flex gap-4">
+                {/* Bones */}
+                <button className="h-10 flex justify-center items-center gap-2 text-xl px-4 text-blue-800 border-blue-800 border-2 rounded-2xl ">
+                  <IoMdCode/>
+                  <p>code</p>
+                </button>
+                <button className="flex  justify-center items-center gap-2 text-xl px-4 text-green-600 border-green-600 border-2 rounded-2xl">
+                  <IoLinkSharp/>
+                  <p>Go</p>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        
         
 
+        </section>
+        <section className="p-6 w-full self-center flex-col items-start justify-start lg:w-2/3">
+          <div className="flex justify-start items-center gap-2">
+            <h2 className="text-2xl font-bold">Contacto</h2>
+            <FcAbout className="text-4xl flex justify-center items-center"/>
+          </div>
 
-      </section>
+          {/* FORMULARIO DE ENVIO */}
+          <div className="w-full flex justify-evenly items-center p-4 gap-4">
+            <div className="w-3/4 h-8  flex justify-start items-center rounded-lg border pl-3 border-black/10 text-[12px] text-black/60 lg:h-10 lg:pl-10 lg:text-lg"> jdmarroquin15@ucatolica.edu.co </div>
+              <button className="flex justify-center items-center h-8 w-14 lg:h-10 lg:w-20 border border-blue-400 rounded-lg">
+                <FaPaperPlane className="text-blue-400 pr-[2px]"/>
+              </button>
+          </div>
+        </section>
+      </div>
     </div>
   )
 }
